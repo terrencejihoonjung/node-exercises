@@ -1,17 +1,21 @@
 {
   "compilerOptions": {
-    "target": "ES2020",
-    "module": "NodeNext",
-    "moduleResolution": "NodeNext",
-    "outDir": "./dist",
-    "rootDir": "./src",
-    "strict": true,
-    "esModuleInterop": true,
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
-    "allowJs": true,
-    "resolveJsonModule": true
+    "target": "ES2020", // Specifies the ECMAScript target version, updated for ESM compatibility
+    "module": "ES2020", // Sets the module system to use ECMAScript modules
+    "lib": ["ES2020"], // Specifies which library files to include in the compilation
+    "moduleResolution": "node", // Helps TypeScript resolve modules in a Node.js environment
+    "strict": true, // Enables all strict type-checking options
+    "esModuleInterop": true, // Allows default imports from CommonJS modules (still useful for some packages)
+    "skipLibCheck": true, // Skips type checking of declaration files
+    "forceConsistentCasingInFileNames": true, // Ensures consistent casing in file names
+    "outDir": "./dist", // Specifies the output directory for compiled files
+    "rootDir": "./src", // Specifies the root directory of input files
+    "sourceMap": true // Generates corresponding .map files
   },
-  "include": ["src/**/*"],
-  "exclude": ["node_modules", "**/*.spec.ts"]
+  "ts-node": {
+    "esm": true,
+    "experimentalSpecifierResolution": "node"
+  },
+  "include": ["src/**/*"], // Specifies which files to include in the compilation
+  "exclude": ["node_modules", "**/*.spec.ts"] // Specifies which files to exclude from the compilation
 }

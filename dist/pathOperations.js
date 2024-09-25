@@ -7,3 +7,4 @@ export function pathExperiments(basePath, fileName) {
     // Use path.extname to get the file extension
     // Log all these values
 }
+//# sourceMappingURL=pathOperations.js.map

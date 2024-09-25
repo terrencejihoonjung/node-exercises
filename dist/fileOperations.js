@@ -49,3 +49,4 @@ export async function getFileInfo(filePath) {
     // If it's a directory, use fs.readdir to list its contents
     // Handle potential errors
 }
+//# sourceMappingURL=fileOperations.js.map

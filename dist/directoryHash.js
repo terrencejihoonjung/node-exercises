@@ -8,3 +8,4 @@ export async function hashDirectory(dirPath) {
     // Handle potential errors
     return "";
 }
+//# sourceMappingURL=directoryHash.js.map

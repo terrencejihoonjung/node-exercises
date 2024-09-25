@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "build": "tsc",
-    "start": "npm run build && node --experimental-specifier-resolution=node dist/index.js",
-    "dev": "ts-node-esm --experimental-specifier-resolution=node src/index.ts"
+    "start": "node dist/index.js",
+    "dev": "node --loader ts-node/esm --no-warnings src/index.ts",
+    "build": "tsc"
   },
   "keywords": [],
   "author": "",
