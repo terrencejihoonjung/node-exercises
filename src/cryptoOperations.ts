@@ -2,17 +2,19 @@ import { promises as fs } from "fs";
 import crypto from "crypto";
 
 export async function hashFile(filePath: string): Promise<string> {
-  // TODO: Implement file hashing
-  // Read the file content using fs.readFile
-  // Create a SHA-256 hash of the content
-  // Return the hash as a hexadecimal string
-  // Handle potential errors
-  return "";
+  try {
+    const contents = await fs.readFile(filePath);
+    const hash = crypto.createHash("sha256");
+    hash.update(contents);
+    return hash.digest("hex");
+  } catch (error) {
+    console.error(error);
+    throw error;
+  }
 }
 
 export function hashString(input: string): string {
-  // TODO: Implement string hashing
-  // Create a SHA-1 hash of the input string
-  // Return the hash as a hexadecimal string
-  return "";
+  const hash = crypto.createHash("sha256");
+  hash.update(input);
+  return hash.digest("hex");
 }

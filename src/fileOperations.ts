@@ -25,7 +25,7 @@ export async function createDirectoryStructure(
     await fs.mkdir(path.join(parentDirectoryPath, "child1"), {
       recursive: true,
     });
-    await fs.mkdir(path.join(parentDirectoryPath, "child1"), {
+    await fs.mkdir(path.join(parentDirectoryPath, "child2"), {
       recursive: true,
     });
 
@@ -41,8 +41,6 @@ export async function createDirectoryStructure(
 }
 
 export async function getFileInfo(filePath: string): Promise<void> {
-  // TODO: Implement file/directory information retrieval
-  // Use fs.stat to get file/directory stats
   try {
     const stats = await fs.stat(filePath);
     console.log(`File/Directory: ${filePath}`);
@@ -57,8 +55,4 @@ export async function getFileInfo(filePath: string): Promise<void> {
   } catch (error) {
     console.error(error);
   }
-
-  // Log whether it's a file or directory, its size, and last modified date
-  // If it's a directory, use fs.readdir to list its contents
-  // Handle potential errors
 }
