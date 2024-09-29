@@ -8,7 +8,6 @@ export async function hashDirectory(dirPath: string): Promise<string> {
   async function processItem(itemPath: string): Promise<void> {
     const stats = await fs.stat(itemPath);
     const relativePath = path.relative(dirPath, itemPath);
-
     hash.update(relativePath);
 
     if (stats.isFile()) {
@@ -17,7 +16,7 @@ export async function hashDirectory(dirPath: string): Promise<string> {
     } else if (stats.isDirectory()) {
       const dirContents = await fs.readdir(itemPath);
 
-      dirContents.sort(); // allows for the same hash output for any OS
+      dirContents.sort();
 
       for (let item of dirContents)
         await processItem(path.join(itemPath, item));
